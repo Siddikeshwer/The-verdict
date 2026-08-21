@@ -80,5 +80,5 @@ Judge
 
 The judge receives the arguments from both sides and evaluates them independently.
 
+<img width="1749" height="1024" alt="Screenshot 2026-08-21 115122" src="https://github.com/user-attachments/assets/be6fecdf-5559-4e0f-8a6b-9a2b7e9e55d8" />
 
-http://localhost:5173
