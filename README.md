@@ -81,4 +81,9 @@ Judge
 The judge receives the arguments from both sides and evaluates them independently.
 
 <img width="1749" height="1024" alt="Screenshot 2026-08-21 115122" src="https://github.com/user-attachments/assets/be6fecdf-5559-4e0f-8a6b-9a2b7e9e55d8" />
+Debate is On 
+<img width="1655" height="1003" alt="Screenshot 2026-08-21 114252" src="https://github.com/user-attachments/assets/09a835d6-e0b3-4849-9046-2e9ed872476d" />
+Final Vedict
+<img width="1102" height="867" alt="Screenshot 2026-08-21 114412" src="https://github.com/user-attachments/assets/5f3573ee-0f25-48f5-8e69-be701853b549" />
+
 
