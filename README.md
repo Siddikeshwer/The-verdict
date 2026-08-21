@@ -27,7 +27,6 @@ The entire experience is presented through a **Minecraft-inspired courtroom UI**
 
 ## 🏛️ How It Works
 
-``
                     USER
                       │
                       ▼
