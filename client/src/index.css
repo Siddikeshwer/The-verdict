@@ -1,0 +1,479 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: #080807;
+  color: white;
+  font-family:
+    "Courier New",
+    monospace;
+}
+
+/* =========================
+   MINECRAFT COURTROOM
+========================= */
+
+.minecraft-court {
+  min-height: 600px;
+  background:
+    linear-gradient(rgba(20, 13, 7, 0.18),
+      rgba(10, 7, 4, 0.55)),
+    repeating-linear-gradient(90deg,
+      #25170d 0px,
+      #25170d 42px,
+      #321e10 43px,
+      #1b1008 84px);
+
+  border: 3px solid #4b351d;
+
+  box-shadow:
+    inset 0 0 100px #000,
+    0 20px 60px rgba(0, 0, 0, 0.6);
+
+  image-rendering: pixelated;
+}
+
+/* =========================
+   STONE WALLS
+========================= */
+
+.court-wall {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 17%;
+  opacity: 0.8;
+
+  background:
+    repeating-linear-gradient(0deg,
+      #34302a 0px,
+      #34302a 30px,
+      #292621 31px,
+      #292621 60px),
+    repeating-linear-gradient(90deg,
+      #454039 0px,
+      #454039 45px,
+      #292621 46px,
+      #292621 90px);
+
+  border-right: 8px solid #17130e;
+}
+
+.court-wall-left {
+  left: 0;
+}
+
+.court-wall-right {
+  right: 0;
+  transform: scaleX(-1);
+}
+
+/* =========================
+   CEILING
+========================= */
+
+.court-ceiling {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+
+  background:
+    repeating-linear-gradient(90deg,
+      #130e0a 0,
+      #130e0a 35px,
+      #24160d 36px,
+      #24160d 70px);
+
+  border-bottom: 6px solid #3c2918;
+}
+
+/* =========================
+   WOODEN BEAMS
+========================= */
+
+.beam {
+  position: absolute;
+  background: #3a2413;
+  border: 3px solid #1a1008;
+  box-shadow: inset 0 0 12px #000;
+  z-index: 5;
+}
+
+.beam-top {
+  top: 65px;
+  left: 0;
+  right: 0;
+  height: 24px;
+}
+
+.beam-left {
+  left: 15%;
+  top: 0;
+  bottom: 0;
+  width: 22px;
+}
+
+.beam-right {
+  right: 15%;
+  top: 0;
+  bottom: 0;
+  width: 22px;
+}
+
+/* =========================
+   PIXEL PANELS
+========================= */
+
+.pixel-panel {
+  background:
+    linear-gradient(135deg,
+      #17130f,
+      #0b0a08);
+
+  border: 3px solid #49361e;
+
+  box-shadow:
+    inset 0 0 0 2px #171009,
+    0 8px 20px rgba(0, 0, 0, 0.5);
+
+  text-shadow:
+    2px 2px #000;
+}
+
+/* =========================
+   LANTERNS
+========================= */
+
+.lantern {
+  position: absolute;
+  top: 95px;
+  z-index: 10;
+
+  width: 18px;
+  height: 35px;
+
+  background: #c87c20;
+
+  border: 3px solid #4c2c0d;
+
+  box-shadow:
+    0 0 25px #f0a52d,
+    0 0 60px rgba(245, 165, 45, 0.35);
+
+  animation: lanternGlow 2s infinite alternate;
+}
+
+.lantern-left {
+  left: 26%;
+}
+
+.lantern-right {
+  right: 26%;
+}
+
+.lantern::before,
+.lantern::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #35200c;
+}
+
+.lantern::before {
+  top: -14px;
+  width: 4px;
+  height: 12px;
+}
+
+.lantern::after {
+  bottom: -8px;
+  width: 20px;
+  height: 4px;
+}
+
+@keyframes lanternGlow {
+  from {
+    opacity: 0.75;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* =========================
+   JUDGE BENCH
+========================= */
+
+.judge-bench {
+  position: absolute;
+  z-index: 12;
+
+  left: 50%;
+  transform: translateX(-50%);
+
+  bottom: 125px;
+
+  width: 260px;
+}
+
+.bench-top {
+  height: 20px;
+
+  background:
+    repeating-linear-gradient(90deg,
+      #69401f,
+      #69401f 30px,
+      #3a2111 31px,
+      #3a2111 60px);
+
+  border: 3px solid #1d1008;
+}
+
+.bench-body {
+  height: 85px;
+
+  background:
+    linear-gradient(90deg,
+      #29170b,
+      #5a3218,
+      #29170b);
+
+  border: 3px solid #1b0e07;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: #d99b32;
+
+  text-shadow: 2px 2px #000;
+}
+
+.bench-body span {
+  font-size: 28px;
+}
+
+.bench-body strong {
+  font-size: 14px;
+  letter-spacing: 4px;
+}
+
+/* =========================
+   PODIUMS
+========================= */
+
+.podium {
+  position: absolute;
+
+  bottom: 125px;
+
+  width: 190px;
+  height: 70px;
+
+  background:
+    repeating-linear-gradient(90deg,
+      #4c2c15 0,
+      #4c2c15 35px,
+      #2c190d 36px,
+      #2c190d 70px);
+
+  border: 4px solid #1a0e07;
+
+  z-index: 11;
+}
+
+.podium-left {
+  left: 8%;
+}
+
+.podium-right {
+  right: 8%;
+}
+
+.banner {
+  position: absolute;
+
+  top: 35px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 55px;
+  height: 95px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 25px;
+
+  border: 3px solid #20150c;
+}
+
+.blue-banner {
+  background: #123c72;
+  color: #e3bc43;
+}
+
+.red-banner {
+  background: #721d1d;
+  color: #e3bc43;
+}
+
+/* =========================
+   CARPET
+========================= */
+
+.court-carpet {
+  position: absolute;
+
+  bottom: 0;
+  left: 32%;
+  right: 32%;
+
+  height: 150px;
+
+  background:
+    repeating-linear-gradient(0deg,
+      #651818 0,
+      #651818 15px,
+      #4d1010 16px,
+      #4d1010 30px);
+
+  border-left: 8px solid #30100b;
+  border-right: 8px solid #30100b;
+}
+
+/* =========================
+   AUDIENCE
+========================= */
+
+.audience {
+  position: absolute;
+
+  left: 20%;
+  right: 20%;
+  bottom: 8px;
+
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+
+  z-index: 25;
+}
+
+.audience-block {
+  width: 28px;
+  height: 34px;
+
+  background: #181818;
+
+  border: 3px solid #090909;
+
+  animation: audienceMove 3s ease-in-out infinite;
+}
+
+@keyframes audienceMove {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+/* =========================
+   SPEAKER BAR
+========================= */
+
+.speaker-bar {
+  min-width: 330px;
+
+  padding: 10px 28px;
+
+  text-align: center;
+
+  background:
+    linear-gradient(#16120e,
+      #080706);
+
+  border: 4px solid #49351e;
+
+  box-shadow:
+    0 0 25px rgba(0, 0, 0, 0.8),
+    inset 0 0 20px #000;
+}
+
+/* =========================
+   TERMINAL
+========================= */
+
+.minecraft-terminal {
+  background:
+    repeating-linear-gradient(0deg,
+      #090c09 0,
+      #090c09 3px,
+      #070907 4px,
+      #070907 7px);
+
+  border: 3px solid #3c392f;
+
+  box-shadow:
+    inset 0 0 35px #000,
+    0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.terminal-cursor {
+  display: inline-block;
+
+  width: 8px;
+  height: 17px;
+
+  background: #d5e7d0;
+
+  animation: cursorBlink 0.8s steps(1) infinite;
+}
+
+@keyframes cursorBlink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080807;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4a3924;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #72542e;
+}
